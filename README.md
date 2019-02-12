@@ -27,6 +27,7 @@ data() {
 3. Create a validation rules object with properties for each field:
 ```javascript
 data() {
+  const that = this;
   const validator = new VuetifyJetValidator();
 
   // This is an example for a typical signup form.
