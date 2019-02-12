@@ -1,0 +1,29 @@
+{
+  "name": "vuetify-jet-validator",
+  "version": "1.0.0",
+  "description": "Validate Vuetify Forms Like a Champ!",
+  "main": "VuetifyJetValidator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sformisano/vuetify-jet-validator.git"
+  },
+  "keywords": [
+    "vue",
+    "vue.js",
+    "vuetify",
+    "validator",
+    "validation",
+    "validations",
+    "form",
+    "forms"
+  ],
+  "author": "Salvatore Formisano <hello@salvatoreformisano.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sformisano/vuetify-jet-validator/issues"
+  },
+  "homepage": "https://github.com/sformisano/vuetify-jet-validator#readme"
+}
