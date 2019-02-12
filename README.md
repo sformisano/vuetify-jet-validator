@@ -60,7 +60,7 @@ data() {
         validator.rules.maxLength(72, "Password should not exceed 72 characters.")
       ],
       confirmPassword: [
-        validator.rules.matches(that.fields, "password", "Passwords must match.")
+        validator.rules.matches(that, "fields.password", "Passwords must match.")
       ]
     }
   }
