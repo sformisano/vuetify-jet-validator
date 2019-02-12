@@ -1,38 +1,9 @@
 /**
- * VuetifyJetValidator is a helper class
- * Instructions for usage in components:
- *
- * 1. In reactive data() create new object:
- * const jetValidator = new VuetifyJetValidator()
- *
- * 2. Define a rules object for your fields inside data(), each with an array of validators:
- * const rules: {
- *   myField: [jetValidator.rules.api(), jetValidator.otherRule()],
- *   otherField: [jetValidator.rules.api()]
- * }
- *
- * NOTE: look at how each validation method works, some of them require parameters.
- *
- * 3. In form submission methods, validate the form by passing it to jetValidator before
- * trying to make the http request to create/update resources:
- * jetValidator.isValidForm(yourFormReference)
- *
- * 4. Step 2 will have validated the form and it will have also tied it to that validator
- * instance, so if the api returns errors, you can add those errors directly to the fields
- * like this:
- * jetValidator.setRequestApiErrors(yourErrors)
- *
- * 5. This validator can also retrieve api errors non tied directly to a single field,
- * they are in the 'global' property of the api errors object. Forms should display these
- * somewhere.
- */
-
-/**
  * The constructor function for the validator.
  *
  * @constructor
  */
-export default function VuetifyJetValidator() {
+const VuetifyJetValidator = function() {
   this.form = null;
   this.apiErrors = [];
   // passing reference to VuetifyJetValidator object in rules object (used by the rules.api method)
@@ -238,3 +209,5 @@ VuetifyJetValidator.prototype.formIsValid = function(form) {
   this.form = form;
   return form.validate();
 };
+
+export default VuetifyJetValidator;
