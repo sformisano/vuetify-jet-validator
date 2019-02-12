@@ -93,20 +93,26 @@ VuetifyJetValidator.prototype.rules = {
    * The returned function makes sure the passed property value matches the field value.
    * Returns the error message otherwise.
    *
-   * Note: we're using an object (i.e. the vue component) and its property name
-   * (the model tied to the field value) because the value is not available
+   * Note: we're using an object (i.e. the vue component) and its property path
+   * (the path to the property used as field model) because the value is not available
    * when the wrapping "matches" function is invoked, but it will be available
    * when the inner callback is triggered for the validation, so we reference
    * its location without passing the value at definition time.
    *
    * @param {object} object
-   * @param {string} propertyName
+   * @param {string} propertyPath
    * @param {string} message
    * @returns {function(*): (boolean|string)}
    */
-  matches(object, propertyName, message) {
+  matches(object, propertyPath, message) {
     return v => {
-      const compare = object[propertyName];
+      let compare = object;
+      const props = propertyPath.split(".");
+
+      props.forEach(prop => {
+        compare = compare[prop];
+      });
+
       return compare === v || message;
     };
   },
