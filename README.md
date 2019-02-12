@@ -169,7 +169,9 @@ to the appropriate field that triggered them.
 
 ## The .api method
 
-While other methods are pretty straightforward, One of the things you will likely need is a way to account for errors coming from the api that have to do
+While other methods are pretty straightforward, it may take a moment to realise what the .api is for, so here's a brief explanation.
+
+One of the things you will likely need is a way to account for errors coming from the api that have to do
 with a specific field. The simplest example is the "email taken" error: while you can make sure a valid email is
 being sent to your api, you can't know whether an account already exists for that email or not until you submit it.
 
