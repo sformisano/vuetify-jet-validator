@@ -191,11 +191,11 @@ VuetifyJetValidator.prototype.rules = {
 /**
  * Used when an api request returns an error to display the error.
  *
- * @param {string} errorCode
+ * @param {Array} errorCodes
  */
-VuetifyJetValidator.prototype.setRequestApiError = function(errorCode) {
+VuetifyJetValidator.prototype.setRequestApiError = function(errorCodes) {
   // this should be called after a new http request, so reset previous api errors
-  this.apiErrors = [errorCode];
+  this.apiErrors = errorCodes;
   this.form.validate();
 
   // validate() displayed the errors, the errors object now needs to be emptied
